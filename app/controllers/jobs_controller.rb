@@ -5,6 +5,12 @@ class JobsController < ApplicationController
 		@jobs = Job.all
 	end
 
+	def new
+	end
+	
+	def create
+	end
+
 	def show
 		current_user.jobs
 	end
