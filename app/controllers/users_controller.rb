@@ -26,6 +26,6 @@ class UsersController < ApplicationController
     end
 
     def require_login
-        redirect_to siginup_path unless session.include? :user_id
+        redirect_to signin_path unless session.include? :user_id
     end
 end

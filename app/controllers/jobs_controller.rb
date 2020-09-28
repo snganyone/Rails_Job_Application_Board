@@ -1,5 +1,4 @@
 class JobsController < ApplicationController
-	before_action :redirect_if_not_logged_in
 	
 	def index
 		@jobs = Job.all
@@ -15,5 +14,9 @@ class JobsController < ApplicationController
 		current_user.jobs
 	end
 
+	private
 
+	def require_login
+		redirect_to signin_path unless session.include? :user_id
+	end
 end
