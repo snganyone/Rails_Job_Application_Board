@@ -19,11 +19,11 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
 
+    private
+
     def user_params
         params.require(:user).permit(:name, :password, :bio)
     end
-
-    private
 
     def require_login
         redirect_to siginup_path unless session.include? :user_id
