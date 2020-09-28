@@ -5,5 +5,12 @@ Rails.application.routes.draw do
   get 'signin' => 'sessions#new'
   post 'signin' => 'sessions#create'
 
-  resources :users, only: [:new, :show, :create, :edit]
+  resources :users
+
+  resources :agencies
+  resources :jobs
+
+  resources :agencies, only: [:index] do 
+	  resources :jobs, only: [:index]
+  end
 end
