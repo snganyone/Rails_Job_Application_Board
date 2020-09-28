@@ -5,12 +5,15 @@ Rails.application.routes.draw do
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
 
+  get '/signup' => 'users#new'
+  post '/signup' => 'users#create'
+
   resources :users
 
   resources :agencies
   resources :jobs
 
   resources :agencies, only: [:index] do 
-	  resources :jobs, only: [:index]
+	  resources :jobs, only: [:index, :new]
   end
 end
