@@ -1,4 +1,4 @@
-<h3>Create Job Post</h3>
+
 <%= form_for @job do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -17,7 +17,7 @@
     <br><br>
 
     <%= f.label :release_date %>
-    <%= f.text_field :release_date %>
+    <%= f.date_field :release_date %>
     <br><br>
 
     <%= f.label :job_type %>
