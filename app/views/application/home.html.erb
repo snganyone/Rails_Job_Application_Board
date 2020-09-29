@@ -3,6 +3,8 @@
     <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
         <input type=submit value='logout'>
       <% end %>
+    <h3>Would you like to see what jobs are available</h3>
+    <%= link_to "Job Listings", jobs_path %>
 <% else %>
     <%= link_to "Sign In", signin_path %>
     <%= link_to "Sign Up", signup_path %>

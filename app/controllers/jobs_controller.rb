@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
-	
+	before_action :logged_in?
+
 	def index
 		@jobs = Job.all
 	end
@@ -36,7 +37,4 @@ class JobsController < ApplicationController
 		params.require(:job).permit(:title, :employer, :location, :description, :release_date, :job_type, :user_id, :agency_id)
 	end
 
-	def require_login
-		redirect_to signin_path unless session.include? :user_id
-	end
 end

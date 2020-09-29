@@ -1,4 +1,6 @@
-<ul>
+<h3>Add a new Job</h3>
+<%= link_to "Post a new Job", new_job_path %>
+<h3>Available Job Listings</h3>
 <ul>
 <% @jobs.each do |j| %>
     <li><%= j.title %></li>
