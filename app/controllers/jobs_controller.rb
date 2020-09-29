@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+	#Requires users to login
 	before_action :logged_in?
 
 	def index
@@ -31,8 +32,14 @@ class JobsController < ApplicationController
 		redirect_to job_path(@job)
 	end
 
-	private
+	#Delete Action
+	def destroy
+		@job = Job.find_by_id(params[:id])
+		@job.destroy
+	end
 
+	private
+	# Job Form Parameters
 	def job_params
 		params.require(:job).permit(:title, :employer, :location, :description, :release_date, :job_type, :user_id, :agency_id)
 	end
