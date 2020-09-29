@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
 	#Requires users to login
-	before_action :logged_in?
+	before_action :redirect_if_not_logged_in
 
 	def index
 		@jobs = Job.all

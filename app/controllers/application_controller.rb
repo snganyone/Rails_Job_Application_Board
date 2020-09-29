@@ -1,13 +1,7 @@
 class ApplicationController < ActionController::Base
-    helper_method :logged_in?, :current_user, logged_in_user
+    helper_method :logged_in?, :current_user, :logged_in_user, :redirect_if_not_logged_in
 
     def home
-    end
-
-    def redirect_if_not_logged_in
-        if !current_user
-            redirect_to '/'
-        end
     end
     
     def current_user
@@ -20,6 +14,12 @@ class ApplicationController < ActionController::Base
 
     def logged_in_user
         if params[:id] == session[:user_id]
-            @correct_user ||= User.find_by(session[:id]) id session[:id]
+            @correct_user ||= User.find_by(session[:id])
+        end
     end
+
+    def redirect_if_not_logged_in
+        redirect_to '/' unless current_user
+    end
+
 end
