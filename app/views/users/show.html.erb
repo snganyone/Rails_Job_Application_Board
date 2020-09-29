@@ -2,6 +2,8 @@
 
 <h3>Your Job Postings</h3>
 
+<%= link_to "Post a new Job", new_job_path %>
+
 <ul>
 <% current_user.jobs.each do |j| %>
     <li><%= j.title %></li>
