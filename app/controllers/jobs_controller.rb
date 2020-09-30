@@ -10,8 +10,8 @@ class JobsController < ApplicationController
 		if current_user.admin == true
 			@job = Job.new
 		else
-			flash[:alert] = "Your are not admin, sorry"
-			redirect_to jobs_path
+			flash[:alert] = "Your are not admin, only system administrators can add job postings."
+			redirect_to root_path
 		end
 	end
 	

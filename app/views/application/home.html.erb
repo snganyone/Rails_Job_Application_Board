@@ -3,7 +3,7 @@
     <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
         <input type=submit value='logout'>
       <% end %>
-      
+
     <% if current_user.jobs.any? %>
 
       <h3>Your Job Postings</h3>
@@ -46,6 +46,7 @@
 <% else %>
     <%= link_to "Sign In", signin_path %>
     <%= link_to "Sign Up", signup_path %>
+    <br><br>
 
     <%= link_to "Sign in with Google!"%>
 <% end %>
