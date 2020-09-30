@@ -12,7 +12,7 @@ class AgenciesController < ApplicationController
 		if @agency.valid?
 			flash[:alert] = "Agency Successfully Created!"
 			@agency.save
-			redirect_to agency_jobs_path	
+			redirect_to agency_jobs_path(@agency)	
 		end
 	end
 
