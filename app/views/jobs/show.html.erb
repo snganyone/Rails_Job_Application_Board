@@ -1,5 +1,11 @@
-<%= @job.title %>
-<%= @job.employer %>
-<%= @job.description %>
-<%= @job.release_date %>
-<%= @job.job_type %>
+<ul>
+    <li><%= @job.title %></li>
+    <li><%= @job.employer %></li>
+    <li><%= @job.description %></li>
+    <li><%= @job.release_date %></li>
+    <li><%= @job.job_type %></li>
+</ul>
+
+<%= link_to "Edit Job Post", edit_job_path(@job) %>
+<br><br>
+<%= button_to "Delete Job Post", job_path(@job), method: :delete %>
