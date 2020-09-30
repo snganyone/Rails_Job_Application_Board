@@ -1,0 +1,13 @@
+<h3>Add a Staffing Agency</h3>
+
+<%= form_for @agency do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br><br>
+    <%= f.label :bio %>
+    <%= f.text_area :bio %>
+    <br><br>
+    <%= f.label :agency_type %>
+    <%= f.text_field :agency_type %>
+    <br>
+<% end %>
