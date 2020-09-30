@@ -3,8 +3,9 @@ class User < ApplicationRecord
     has_many :agencies, through: :jobs
 
     has_secure_password
-    
+
     #Validations
     validates :name, presence: true
     validates :password, presence: true
+    validates :bio, presence: true
 end
