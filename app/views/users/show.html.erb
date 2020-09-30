@@ -2,34 +2,34 @@
 
 <% if current_user.jobs.any? %>
 
-<h3>Your Job Postings</h3>
+    <h3>Your Job Postings</h3>
 
-<%= link_to "Post a new Job", new_job_path %>
+    <%= link_to "Post a new Job", new_job_path %>
 
-<ul>
-<% current_user.jobs.each do |j| %>
-    <li><%= j.title %></li>
-    <li><%= j.employer %></li>
-    <li><%= j.location %></li>
-    <li><%= j.description %></li>
-    <li><%= j.release_date %></li>
-    <li><%= j.job_type %></li>
+    <ul>
+    <% current_user.jobs.each do |j| %>
+        <li><%= j.title %></li>
+        <li><%= j.employer %></li>
+        <li><%= j.location %></li>
+        <li><%= j.description %></li>
+        <li><%= j.release_date %></li>
+        <li><%= j.job_type %></li>
 
-    <%= link_to "Edit Job Post", edit_job_path(j) %>
-    <br>
-    <br>
-    <%= button_to "Delete Job Post", job_path(j), method: :delete %>
-    <br>
-    <br>
-<% end %>
+        <%= link_to "Edit Job Post", edit_job_path(j) %>
+        <br>
+        <br>
+        <%= button_to "Delete Job Post", job_path(j), method: :delete %>
+        <br>
+        <br>
+    <% end %>
 
-</ul>
+    </ul>
 
 <% else %>
 
     <h3>You do not have any Job Postings</h3>
     <p>Add a new job here <%= link_to "Create Job Post", new_job_path %></p>
-    
+
 <% end %>
 
 <p>Please click here to view all the job listings <%= link_to "Job Postings", jobs_path %></p>
