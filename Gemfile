@@ -8,6 +8,10 @@ gem 'pry'
 gem 'yarn'
 gem 'optimist'
 
+#Google Omniauth
+gem 'omniauth-google-oauth2'
+
+#Bootstrap
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 

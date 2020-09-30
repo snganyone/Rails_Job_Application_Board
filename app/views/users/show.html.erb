@@ -1,5 +1,7 @@
 <p><%= @user.name %></p>
 
+<% if current_user.jobs.any? %>
+
 <h3>Your Job Postings</h3>
 
 <%= link_to "Post a new Job", new_job_path %>
@@ -21,5 +23,8 @@
     <br>
 <% end %>
 </ul>
+<% else %>
+    <h3>You do not have any Job Postings</h3>
+<% end %>
 
-<p>Please click here to view all the job listings<%= link_to "Job Postings", jobs_path %></p>
+<p>Please click here to view all the job listings <%= link_to "Job Postings", jobs_path %></p>
