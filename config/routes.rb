@@ -19,4 +19,8 @@ Rails.application.routes.draw do
   resources :agencies, only: [:index] do 
 	  resources :jobs, only: [:index, :new]
   end
+
+  resources :users do 
+    resources :jobs, only: [:index, :show]
+  end
 end
