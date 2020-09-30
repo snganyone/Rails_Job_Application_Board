@@ -13,7 +13,9 @@ class JobsController < ApplicationController
 	def create
 		@job = Job.new(job_params)
 		
-		if @job.save
+		if @job.valid?
+			flash[:alert] = "Job Successfully Created!"
+			@job.save
 			redirect_to job_path(@job)
 		end
 	end

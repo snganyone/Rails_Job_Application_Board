@@ -8,6 +8,9 @@ gem 'pry'
 gem 'yarn'
 gem 'optimist'
 
+#Flash Gem
+gem 'flash'
+
 #Google Omniauth
 gem 'omniauth-google-oauth2'
 

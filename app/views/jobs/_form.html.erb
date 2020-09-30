@@ -1,5 +1,16 @@
+<% if job.errors.any? %>
+<div id="error_explanataion">
+    <h2>There were some errors: </h2>
+    <ul>
+        <% job.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
 
-<%= form_for @job do |f| %>
+
+<%= form_for job do |f| %>
     <%= f.collection_select :user_id, User.all, :id, :name %>
     <br><br><br>
     <%= f.collection_select :agency_id, Agency.all, :id, :name %>

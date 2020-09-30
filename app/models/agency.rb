@@ -4,6 +4,5 @@ class Agency < ApplicationRecord
 
     #Validations
     validates :name, presence: true
-    validates :bio, length: { maximum: 500 }
 
 end

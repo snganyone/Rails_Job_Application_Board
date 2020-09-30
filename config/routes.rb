@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :agencies
   resources :jobs
 
+
   resources :agencies, only: [:index] do 
 	  resources :jobs, only: [:index, :new]
   end
