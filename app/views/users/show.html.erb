@@ -16,6 +16,9 @@
     <%= link_to "Edit Job Post", edit_job_path(j) %>
     <br>
     <br>
+    <%= button_to "Delete Job Post", job_path(j), method: :delete %>
+    <br>
+    <br>
 <% end %>
 </ul>
 
