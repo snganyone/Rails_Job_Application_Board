@@ -22,9 +22,14 @@
     <br>
     <br>
 <% end %>
+
 </ul>
+
 <% else %>
+
     <h3>You do not have any Job Postings</h3>
+    <p>Add a new job here <%= link_to "Create Job Post", new_job_path %></p>
+    
 <% end %>
 
 <p>Please click here to view all the job listings <%= link_to "Job Postings", jobs_path %></p>
