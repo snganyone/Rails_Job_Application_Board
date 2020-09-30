@@ -15,6 +15,8 @@ class ApplicationController < ActionController::Base
     def logged_in_user
         if params[:id] == session[:user_id]
             @correct_user ||= User.find_by(session[:id])
+        else
+            redirect_to '/'
         end
     end
 
