@@ -14,6 +14,8 @@ gem 'flash'
 #Google Omniauth
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails'
+gem 'omniauth-rails_csrf_protection'
+gem 'omniauth'
 
 #Bootstrap
 gem 'bootstrap-sass'

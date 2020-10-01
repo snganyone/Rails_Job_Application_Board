@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   post '/signin' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
 
+  #Omniauth
+  get '/auth/:provider/callback' => 'sessions#omniauth'
+
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
 

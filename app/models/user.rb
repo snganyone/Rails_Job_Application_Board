@@ -11,4 +11,13 @@ class User < ApplicationRecord
 
     #Scope
     scope :admin, -> {where(admin: true)}
+
+    #Google Omniauth
+    def self.from_omniauth(auth)
+        find_or_create_by(name: auth[:info][:name]) do |user|
+            #Randomized Password
+            user.password = SecureRandom.hex(15)
+        end
+    end
+
 end
