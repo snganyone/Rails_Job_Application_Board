@@ -8,4 +8,7 @@ class User < ApplicationRecord
     validates :name, presence: true
     validates :password, presence: true
     validates :bio, length: { maximum: 500 }
+
+    #Scope
+    scope :admin, -> {where(admin: true)}
 end

@@ -13,6 +13,7 @@ gem 'flash'
 
 #Google Omniauth
 gem 'omniauth-google-oauth2'
+gem 'dotenv-rails'
 
 #Bootstrap
 gem 'bootstrap-sass'

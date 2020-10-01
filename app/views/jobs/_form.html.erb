@@ -1,23 +1,32 @@
+<%= form_for job do |f| %>
 <% if job.errors.any? %>
-<div id="error_explanataion">
-    <h2>There were some errors: </h2>
-    <ul>
-        <% job.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-        <% end %>
-    </ul>
-</div>
+    <div id="error_explanataion">
+        <h2> <%= pluralize(job.errors.count, "error") %>
+        There were some errors that prohibited this post from being saved: 
+        </h2>
+        <ul>
+            <% job.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+        </ul>
+    </div>
 <% end %>
 
-
-<%= form_for job do |f| %>
+    <%= f.label :user_id %>
     <%= f.collection_select :user_id, User.all, :id, :name %>
-    <br><br><br>
-    <%= f.collection_select :agency_id, Agency.all, :id, :name %>
+
     <br><br><br>
 
+    <%= f.label :agency_id %>
+    <%= f.collection_select :agency_id, Agency.all, :id, :name %>
+
+    <br><br><br>
+
+    <div class="field<%=' field_with_errors' if job.errors[:title].any?%>">
     <%= f.label :title %>
     <%= f.text_field :title %>
+    </div>
+
     <br><br>
 
     <%= f.label :employer %>

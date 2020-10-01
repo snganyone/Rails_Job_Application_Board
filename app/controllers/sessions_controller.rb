@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
 		if session[:name].nil? || session[:name].empty?
 			redirect_to '/signin'
 		else
+			flash[:alert] = "Signed in successfully!"
 			session[:user_id] = @user.id
 			redirect_to root_path
 		end

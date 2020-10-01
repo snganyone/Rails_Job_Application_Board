@@ -11,7 +11,7 @@
   <p>An online job board dedicated to helping you find the right job.</p>
   </div>
   <% flash.keys.each do |f| %>
-    <%= flash[f] %>
+    <%= flash[:f] %>
   <% end %>
     <%= yield %>
   </body>

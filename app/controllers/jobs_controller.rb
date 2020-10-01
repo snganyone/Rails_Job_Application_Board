@@ -6,6 +6,7 @@ class JobsController < ApplicationController
 	def index
 		@agency = Agency.all
 		@jobs = Job.all
+		flash.now[:notice] = "We have exatcly #{@jobs.size} right now"
 	end
 
 	def new
@@ -14,9 +15,8 @@ class JobsController < ApplicationController
 	
 	def create
 		@job = Job.new(job_params)
-		if @job.valid?
-			flash[:alert] = "Job Successfully Created!"
-			@job.save
+		if @job.save
+			flash[:success] = "Job Successfully Created!" 
 			redirect_to job_path(@job)
 		end
 	end
@@ -27,7 +27,6 @@ class JobsController < ApplicationController
 
 	def edit
 		@job = Job.find(params[:id])
-
 	end
 
 	def update
