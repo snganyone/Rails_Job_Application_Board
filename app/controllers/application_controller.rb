@@ -21,7 +21,9 @@ class ApplicationController < ActionController::Base
     end
 
     def admin_user
-        redirect_to jobs_path unless current_user.admin
+        !current_user.admin
+        flash[:alert] = "Your are not admin, only system administrators can perform that action."
+        redirect_to root_path
     end
 
     def redirect_if_not_logged_in

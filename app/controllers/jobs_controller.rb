@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
 	#Requires users to login
-	before_action :redirect_if_not_logged_in
+	before_action :redirect_if_not_logged_in, :admin_user
 
 	def index
 		@agency = Agency.all
@@ -8,12 +8,7 @@ class JobsController < ApplicationController
 	end
 
 	def new
-		if current_user.admin == true
-			@job = Job.new
-		else
-			flash[:alert] = "Your are not admin, only system administrators can add job postings."
-			redirect_to root_path
-		end
+		@job = Job.new
 	end
 	
 	def create
@@ -30,12 +25,8 @@ class JobsController < ApplicationController
 	end
 
 	def edit
-		if current_user.admin == true
-			@job = Job.find(params[:id])
-		else
-			flash[:alert] = "Your are not admin, only system administrators can add job postings."
-			redirect_to root_path
-		end
+		@job = Job.find(params[:id])
+
 	end
 
 	def update
