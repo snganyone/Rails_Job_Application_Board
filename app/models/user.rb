@@ -5,8 +5,8 @@ class User < ApplicationRecord
     has_secure_password
 
     #Validations
-    validates :name, presence: true
-    validates :password, presence: true
+    validates_presence_of :name, presence: true
+    validates_presence_of :password, presence: true
     validates :bio, length: { maximum: 500 }
 
     #Scope

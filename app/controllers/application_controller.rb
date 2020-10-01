@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
 
     def admin_user
         if !current_user.admin
-            flash[:alert] = "Your are not admin, only system administrators can perform that action."
+            flash[:alert] = "Your are not an admin, only system administrators can perform that action."
             redirect_to root_path
         end
     end
