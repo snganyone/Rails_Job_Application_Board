@@ -20,6 +20,10 @@ class ApplicationController < ActionController::Base
         end
     end
 
+    def admin_user
+        redirect_to jobs_path unless current_user.admin
+    end
+
     def redirect_if_not_logged_in
         redirect_to '/' unless current_user
     end
