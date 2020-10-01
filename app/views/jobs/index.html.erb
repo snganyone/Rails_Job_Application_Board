@@ -15,6 +15,14 @@
 <% end %>
 </ul>
 
+<h3>We also have some amazing staffing companies that are here to help to!</h3>
+<ul>
+    <% @agency.each do |a| %>
+        <li><%= a.name %></li>
+    <% end %>
+</ul>
+<br><br>
+
 <% if current_user %>
     <%= link_to "Home Page", '/' %>
 <% end %>

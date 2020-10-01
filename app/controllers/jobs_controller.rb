@@ -3,6 +3,7 @@ class JobsController < ApplicationController
 	before_action :redirect_if_not_logged_in
 
 	def index
+		@agency = Agency.all
 		@jobs = Job.all
 	end
 
