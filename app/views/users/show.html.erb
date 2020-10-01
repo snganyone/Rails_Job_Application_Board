@@ -28,7 +28,9 @@
 <% else %>
 
     <h3>You do not have any Job Postings</h3>
-    <p>Add a new job here <%= link_to "Create Job Post", new_job_path %></p>
+    <% if current_user.admin %>
+        <p>Add a new job here <%= link_to "Create Job Post", new_job_path %></p>
+    <% end %>
 
 <% end %>
 

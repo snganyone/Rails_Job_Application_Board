@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
 	#Requires users to login
 	before_action :redirect_if_not_logged_in, :admin_user
+	skip_before_action :admin_user
 
 	def index
 		@agency = Agency.all

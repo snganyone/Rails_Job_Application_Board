@@ -1,4 +1,5 @@
 class AgenciesController < ApplicationController
+	before_action :redirect_if_not_logged_in, :admin_user
 	def index
 		@agency = Agency.all
 	end
