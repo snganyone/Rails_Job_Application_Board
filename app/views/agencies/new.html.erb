@@ -1,6 +1,14 @@
 <h3>Add a Staffing Agency</h3>
 
 <%= form_for @agency do |f| %>
+    <% if @agency.errors.any? %>
+        <ul>
+            <% @agency.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    <% end %>
+
     <%= f.label :name %>
     <%= f.text_field :name %>
     <br><br>

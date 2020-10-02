@@ -11,9 +11,11 @@ class AgenciesController < ApplicationController
 	def create
 		@agency = Agency.new(agency_params)
 		if @agency.valid?
-			flash[:alert] = "Agency Successfully Created!"
 			@agency.save
+			flash[:alert] = "Agency Successfully Created!"
 			redirect_to agency_jobs_path(@agency)	
+		else
+			render :new
 		end
 	end
 

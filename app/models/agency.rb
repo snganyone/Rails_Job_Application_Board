@@ -3,6 +3,7 @@ class Agency < ApplicationRecord
     has_many :users, through: :jobs
 
     #Validations
-    validates :name, presence: true
+    validates_presence_of :name, presence: true
+    validates_presence_of :agency_type, presence: true
 
 end
