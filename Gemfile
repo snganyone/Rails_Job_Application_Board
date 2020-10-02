@@ -18,6 +18,9 @@ gem 'omniauth-rails_csrf_protection'
 gem 'omniauth'
 
 #Bootstrap
+gem 'bootstrap', '~> 4.5.2'
+gem 'sprockets-rails'
+gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 

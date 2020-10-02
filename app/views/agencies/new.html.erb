@@ -9,14 +9,23 @@
         </ul>
     <% end %>
 
+    <div class="field<%=' field_with_errors' if @agency.errors[:name].any?%>">
     <%= f.label :name %>
     <%= f.text_field :name %>
+    </div>
+
     <br><br>
+
     <%= f.label :bio %>
     <%= f.text_area :bio %>
+    
     <br><br>
+
+    <div class="field<%=' field_with_errors' if @agency.errors[:name].any?%>">
     <%= f.label :agency_type %>
     <%= f.text_field :agency_type %>
+    </div>
+
     <br><br><br>
 
     <%= f.submit "Submit"%>
