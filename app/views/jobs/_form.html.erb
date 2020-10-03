@@ -35,28 +35,20 @@
     </div>
     <br><br>
 
-    <div class="field<%=' field_with_errors' if job.errors[:location].any?%>">
     <%= f.label :location %>
     <%= f.text_field :location %>
-    </div>
     <br><br>
     
-    <div class="field<%=' field_with_errors' if job.errors[:description].any?%>">
     <%= f.label :description %>
     <%= f.text_field :description %>
-    </div>
     <br><br>
 
-    <div class="field<%=' field_with_errors' if job.errors[:release_date].any?%>">
     <%= f.label :release_date %>
     <%= f.date_field :release_date %>
-    </div>
     <br><br>
 
-    <div class="field<%=' field_with_errors' if job.errors[:job_type].any?%>">
     <%= f.label :job_type %>
     <%= f.text_field :job_type %>
-    </div>
     <br><br>
 
     <%= f.submit "Submit" %>

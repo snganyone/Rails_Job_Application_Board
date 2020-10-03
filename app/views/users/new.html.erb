@@ -8,20 +8,12 @@
         </ul>
     <% end %>
 
-    <%= f.label :admin %>
-    <%= f.check_box :admin %>
-    <br>
-
-    <div class="field<%=' field_with_errors' if @user.errors[:name].any?%>">
     <%= f.label :name %>
     <%= f.text_field :name %>
-    </div>
     <br>
 
-    <div class="field<%=' field_with_errors' if @user.errors[:password].any?%>">
     <%= f.label :password %>
     <%= f.password_field :password %>
-    </div>
     <br>
 
     <%= f.label :bio %>
