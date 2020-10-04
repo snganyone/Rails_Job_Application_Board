@@ -6,7 +6,7 @@ class JobsController < ApplicationController
 	def index
 		@agency = Agency.all
 		@jobs = Job.all
-		flash.now[:notice] = "We have exatcly #{@jobs.size} right now"
+		flash.now[:notice] = "We have exactly #{@jobs.size} right now"
 	end
 
 	def new
