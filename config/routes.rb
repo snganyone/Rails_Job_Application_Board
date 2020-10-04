@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :jobs
 
 
-  resources :agencies, only: [:index] do 
+  resources :agencies, only: [:index, :new] do 
 	  resources :jobs, only: [:index, :new]
   end
 
