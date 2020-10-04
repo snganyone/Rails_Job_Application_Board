@@ -12,6 +12,10 @@ class User < ApplicationRecord
     #Scope
     scope :admin, -> {where(admin: true)}
 
+#   def self.admin
+#       where(admin: true)
+#   end
+
     #Google Omniauth
     def self.from_omniauth(auth)
         find_or_create_by(name: auth[:info][:name]) do |user|
