@@ -21,10 +21,11 @@ class SessionsController < ApplicationController
 	#Google Omniauth!
 	def omniauth
 		user = User.from_omniauth(auth)
-		if user.valid?
+		if user
 			session[:user_id] = user.id
 			redirect_to root_path
 		else
+			flash[:alert] = "Something went wrong"
 			redirect_to signin_path
 		end
 	end
