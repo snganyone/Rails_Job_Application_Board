@@ -8,4 +8,8 @@ class Job < ApplicationRecord
     validates :description, length: { maximum: 500 }
     validates :release_date, presence: true
     validates :job_type, presence: true
+
+    def self.search(query)
+        Job.where('title LIKE ?', "%#{query}%")
+    end
 end

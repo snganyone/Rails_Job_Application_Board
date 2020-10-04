@@ -4,9 +4,14 @@ class JobsController < ApplicationController
 	skip_before_action :admin_user, only: [:index]
 
 	def index
-		@agency = Agency.all
-		@jobs = Job.all
+		if params[:query]
+			@jobs = Job.search(params[:query])
+			@agency = Agency.all
+		else
+			#@agency = Agency.all
+			@jobs = Job.all
 		flash.now[:notice] = "We have exactly #{@jobs.size} jobs right now"
+		end
 	end
 
 	def new

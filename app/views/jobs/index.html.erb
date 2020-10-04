@@ -3,6 +3,12 @@
 <%= link_to "Post a new Job", new_job_path %>
 <% end %>
 <h3>Available Job Listings</h3>
+
+<%= form_tag(jobs_path, method: :get) do %>
+    <%= text_field_tag "query" %>
+    <%= submit_tag "Search" %>
+<% end %>
+
 <ul>
 <% @jobs.each do |j| %>
     <li><%= j.title %></li>
