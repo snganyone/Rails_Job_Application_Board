@@ -9,6 +9,7 @@ class Job < ApplicationRecord
     validates :release_date, presence: true
     validates :job_type, presence: true
 
+    #Job Scope
     def self.search(query)
         Job.where('title LIKE ?', "%#{query}%")
     end
