@@ -1,15 +1,17 @@
-<div class="container text-center">
+<div class="container">
 <% if logged_in? %>
     <p>Hi, <%= current_user.name %> thanks for visiting</p>
     <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
         <input class= "btn btn-primary" type=submit value='logout'>
       <% end %>
 
+</div>
+
     <% if current_user.jobs.any? %>
 
       <h3>Your Job Postings</h3>
   
-      <%= link_to "Post a new Job", new_job_path %>
+      <%= link_to "Post a new Job", new_job_path, :class => "btn btn-primary" %>
   
       <ul>
       <% current_user.jobs.each do |j| %>
@@ -52,4 +54,3 @@
     <%= button_to "Log in with Google", '/auth/google_oauth2', :class => "button btn btn-primary" %>
 
 <% end %>
-</div>
