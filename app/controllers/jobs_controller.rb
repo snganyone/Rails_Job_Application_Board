@@ -8,7 +8,7 @@ class JobsController < ApplicationController
 			@jobs = Job.search(params[:query])
 			@agency = Agency.all
 		else
-			#@agency = Agency.all
+			@agency = Agency.all
 			@jobs = Job.all
 		flash.now[:notice] = "We have exactly #{@jobs.size} jobs right now"
 		end

@@ -1,11 +1,8 @@
-<div class="container">
 <% if logged_in? %>
     <p>Hi, <%= current_user.name %> thanks for visiting</p>
     <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
         <input class= "btn btn-primary" type=submit value='logout'>
       <% end %>
-
-</div>
 
     <% if current_user.jobs.any? %>
 
@@ -47,7 +44,7 @@
     <br>
 
 <% else %>
-    <%= link_to "Sign In", signin_path %>
+    <%= link_to "Sign In", signin_path, :class => "btn btn-success" %>
     <%= link_to "Sign Up", signup_path, :class => "btn btn-primary" %>
     <br><br>
 
