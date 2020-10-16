@@ -4,6 +4,8 @@
         <input class= "btn btn-primary" type=submit value='logout'>
       <% end %>
 
+      
+
     <% if current_user.jobs.any? %>
 
       <h3>Your Job Postings</h3>
@@ -18,6 +20,9 @@
           <li><%= j.description %></li>
           <li><%= j.release_date %></li>
           <li><%= j.job_type %></li>
+
+          <%= link_to "Job Post", user_job_path(current_user, j) %>
+          <br>
   
           <%= link_to "Edit Job Post", edit_job_path(j) %>
           <br>
@@ -25,6 +30,7 @@
           <%= button_to "Delete Job Post", job_path(j), method: :delete %>
           <br>
           <br>
+          
       <% end %>
   
       </ul>
