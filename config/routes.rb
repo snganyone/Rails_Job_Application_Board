@@ -19,8 +19,8 @@ Rails.application.routes.draw do
   resources :jobs
 
 
-  resources :agencies, only: [:index, :new] do 
-	  resources :jobs, only: [:index, :new]
+  resources :agencies, only: [:index, :new, :show] do 
+	  resources :jobs, only: [:index, :new, :show]
   end
 
   resources :users do 

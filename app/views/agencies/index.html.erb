@@ -1,0 +1,10 @@
+<% @agency.each do |agent| %>
+    <%= agent.name %>  
+    <ul>
+    <% agent.jobs.each do |j| %>
+        <li><%= link_to j.title, agency_job_path(agent, j) %></li>
+    <% end %>
+    </ul>
+
+    <br>
+<% end %>
