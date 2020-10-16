@@ -22,11 +22,17 @@
 </ul>
 
 <h3>We also have some amazing staffing companies that are here to help to!</h3>
+
 <ul>
     <% @agency.each do |a| %>
         <li><%= a.name %></li>
     <% end %>
 </ul>
+<br>
+
+<h3>Agency Job Postings</h3>
+<%= link_to "Agency Job Postings", agencies_path %>
+
 <br><br>
 
 <% if current_user %>
