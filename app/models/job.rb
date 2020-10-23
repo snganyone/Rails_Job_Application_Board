@@ -13,4 +13,6 @@ class Job < ApplicationRecord
     def self.search(query)
         Job.where('title LIKE ?', "%#{query}%")
     end
+
+    scope :date_order, -> {order(release_date: :desc)}
 end
